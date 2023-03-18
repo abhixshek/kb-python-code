@@ -1,1 +1,4 @@
-This repository contains learnings from Mark Lutz's python books.
+## Background
+This repository contains learnings(code) from Mark Lutz's python books.
+
+Notes from the book can be found [here](got it here). 
