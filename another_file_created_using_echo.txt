@@ -1,0 +1,2 @@
+tried to append using ">" to a file. failed to accomplish because single > overwrites to the file. for append it is must to use >>
+

@@ -1,0 +1,4 @@
+this file was created using the echo command, like this: "echo [content] > [filename]"
+this new line was added using: echo [new_line] >> [filename]
+message in double quotes
+special characters / $ % ^ * @ & \ in this line. line added using echo

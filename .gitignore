@@ -1,0 +1,32 @@
+# blank lines and lines starting with a hash are ignored
+
+# ignore files ending with ".o" or ".a" 
+# applies to all files/directories in the working tree. that is, it checks recursively through the entire working tree.
+# * matches zero or more characters
+*.[oa]
+
+# simlarly ignore files ending with ".bat" 
+# this includes fast.bat , .bat , slow.bat
+*.bat
+
+# ignore logs/ directory anywhere in the working tree
+# Note that logs/ dir and all of its contents will be ignored no matter what kind of files are there.
+logs/
+
+# ignore tmp/ dir anywhere in the working tree
+# Note that tmp/ dir and all of its contents will be ignored no matter what kind of files are there.
+tmp/
+
+# ignore .h files in the root dir ONLY.
+/*.h
+
+# but do not ignore libs.h even though we are ignoring all .h files as specified above
+!libs.h
+
+#ignore docs/notes.txt, but not docs/arch/mint.txt
+docs/*.txt
+
+# ignore all .pdf files in the docs/ directory and any of its subdirectories
+# so docs/lesson1.pdf and docs/arch/lesson2.pdf is also ignored, but lesson0.pdf in the root dir is not ignored
+docs/**/*.pdf
+
