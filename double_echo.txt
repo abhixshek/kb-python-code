@@ -1,0 +1,4 @@
+hi
+hello
+file was created using double echo commands redirected to this file
+
