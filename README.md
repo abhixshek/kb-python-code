@@ -10,3 +10,5 @@ tried creating some files using echo 'content' > [filename]
 studied git add and git status 
 also git status -s or git status --short is quite handy.
 
+regexes/ contains regex examples using the re module of standard library.
+
