@@ -97,3 +97,10 @@ print(re.match(r'a{3,}b', 'aaaaaaaaaaaaaaaaaaaaabcd'))
 # {m,n}? becomes non greedy matching minimum possible 
 print(re.match(r'a{3,5}?', 'aaaaa')) # matches aaa, non greedy
 print(re.match(r'a{3,5}', 'aaaaa')) # matches aaaaa , greedy
+
+# \ is the most important metacharacter. \ followed by various characters defines various character sets. 
+# to escape other metacharacters including the backslash character, you need to escape them with \. 
+print(re.match(r'ab\?', 'ab?')) # matches 'ab?'
+print(re.match(r'ab\\c', 'ab\c'))
+print(re.match(r'ab\\c', r'ab\c'))
+
