@@ -22,6 +22,12 @@ print(re.match(r'[abpc]ry', r'pry'))
 print(re.match(r'[abpc]ry', r'zry'))
 print(re.match(r'[aaaaaaaaaaaaaaaaaaaa]ry', r'ary')) # repeating some characters is not a problem but it doesnt make any difference either. 
 print(re.match(r'[0-9]ry', '3ry'))
+print(re.match(r'[0-5][0-9]', '00')) # matches. [0-5][0-9] matches 00 to 59. 
+print(re.match(r'[0-5][0-9]', '59')) # matches
+print(re.match(r'[0-5][0-9]', '60')) # no match
+print(re.match(r'[0-5][0-9]', '100')) # matches '10'. 
+print(re.match(r'[0-5][0-9]', '0.1')) # no match
+
 
 # metacharacters except '\' are stripped of their special meaning inside a class. therefore [ab$] matches any of 'a', 'b', or '$'
 print(re.match(r'[abc$(?]ry', r'bry')) # matches
@@ -101,6 +107,7 @@ print(re.match(r'a{3,5}', 'aaaaa')) # matches aaaaa , greedy
 # \ is the most important metacharacter. \ followed by various characters defines various character sets. 
 # to escape other metacharacters including the backslash character, you need to escape them with \. 
 print(re.match(r'ab\?', 'ab?')) # matches 'ab?'
+print(re.match(r'ab\\', 'ab\\')) # matches 'ab\'
 print(re.match(r'ab\\c', 'ab\c'))
 print(re.match(r'ab\\c', r'ab\c'))
 
