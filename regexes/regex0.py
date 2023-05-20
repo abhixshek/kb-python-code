@@ -43,6 +43,14 @@ print(re.match(r'[a^]ry', r'aryvbn')) # matches
 print(re.match(r'[a^]ry', r'^ryvbn')) # matches
 print(re.match(r'[a^]ry', r'cryvbn')) # no match
 
+# trying to match '[' or ']' literals.
+print('trying to match [ , ] literals.')
+# print(re.match(r'[]', '[]')) # throws an error : unterminated character set.
+print(re.match(r'[]]', ']')) # matches
+print(re.match(r'[\[\]]', ']')) # matches
+print(re.match(r'[\[\]]', '[')) # matches
+
+
 
 # the dot character "." matches any character except the newline
 print(re.match(r'.ry', r'Dry'))
@@ -110,4 +118,24 @@ print(re.match(r'ab\?', 'ab?')) # matches 'ab?'
 print(re.match(r'ab\\', 'ab\\')) # matches 'ab\'
 print(re.match(r'ab\\c', 'ab\c'))
 print(re.match(r'ab\\c', r'ab\c'))
+
+# \w 
+print(re.match(r'\w', 'abc')) # matches 'a'
+print(re.match(r'\w', 'Abc')) # matches 'A'
+print(re.match(r'\w', '0123abc')) # matches 0
+print(re.match(r'\w', '9abc')) # matches 9
+print(re.match(r'\w', '_abc')) # matches underscore
+print(re.match(r'\w', '-abc')) # no match as hyphen is not covered by \w
+
+# \d which matches [0-9]
+# \D which matches [^0-9]
+print(re.match(r'\d', '9abc')) # matches 9
+print(re.match(r'\d', 'abc')) # no match
+print(re.match(r'\D', 'abc')) # no matches 'a'
+# \s
+
+# | is like the OR operator. matches regex A or regex B in A | B.
+print(re.match(r'abc|xyz', 'abc123')) # matches abc 
+print(re.match(r'abc|xyz', 'xyz123')) # matches xyz , i.e. B
+print(re.match(r'abc|xyz', 'rty123')) # no match from either of A or B. 
 
