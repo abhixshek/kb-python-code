@@ -1,3 +1,4 @@
+# knowledge-base from Learning Python by Mark Lutz
 # in python, we do THINGS with STUFF. STUFF are python objects and THINGS are the operations we perform on them.
 # Objects are essentially just pieces of memory, with values and sets of associated operations.
 
@@ -84,12 +85,10 @@ r = [1,5,7]
 
 # list comprehension
 matrix = [[1,2,3], [4,5,6], [7,8,9]]
-print(matrix)
 # how do you extract column 2(middle)?
 column2 = [row[1] for row in matrix]
 print(column2)
 # how do you extract even numbers from column 2?
 even_nos = [row[1] for row in matrix if row[1] % 2 == 0]
 print(even_nos)
-
 
