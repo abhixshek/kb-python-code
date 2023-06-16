@@ -4,6 +4,12 @@
 
 # python's core object types include numbers, string, list, dictionary, tuples, sets, booleans, modules, classes, functions, etc, etc
 
+# numbers: 
+print(500)
+print(1.5 * 4)
+print(2 ** 5)
+
+
 # Strings are examples of sequence in python.
 # sequence = a positionally ordered collection of other objects. 
 # other examples of sequences are lists and tuples.
@@ -54,6 +60,9 @@ print('{} okay {} fine{}{}'.format(st,num,height, 'wow cool')) # .format() - str
 print('{0} okay {1} fine{2}{3}'.format(st,num,height, 'wow cool')) #you can give the number to indicate which variable from the arguments to .format() to insert at that position
 print('{3} okay {1} fine{0}{2}'.format(st,num,height, 'wow cool')) # changed the order
 
+###################################################
+###################################################
+
 #lists in python
 w = [1,7,9.45, 'abhi']
 # since lists are sequences, they support all sequence operations we covered above for strings. 
@@ -78,17 +87,31 @@ print(w) # del works the same way as .pop() but doesnt return anything. again, l
 q = [7,3,9,2,8,1,66]
 print(q.reverse()) # .reverse() operation does not return anything and just does what it does. therefore, None is printed in output 
 print(q) # q updated in place.
-
+print(q.remove(66)) # removes the value 66. since it doesnt return anything None is printed. 
+e = [67,34,89,2,67,44,23]
+e.insert(1,97) # inserts 97 at index 1 and shift all values to the right. 
+e.insert(40,176) # index 40 doesnt exist, but function doesnt throw error and simply inserts the value at the last
+print(e)
 r = [1,5,7]
 ## assigning beyond index range gives a IndexError. ex. : r[3] = 45. FAILS. Even just quering an index that doesnt exist, will give error. therefore print(r[3]) will give IndexError.
 # therefore, to append to a list, always use .append() or .insert()
 
-# list comprehension
-matrix = [[1,2,3], [4,5,6], [7,8,9]]
+# nesting and list comprehension
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]] # code can span multiple lines is bracketed
+# get me the centre element in the above matrix
+print(matrix[1][1])
 # how do you extract column 2(middle)?
 column2 = [row[1] for row in matrix]
 print(column2)
 # how do you extract even numbers from column 2?
 even_nos = [row[1] for row in matrix if row[1] % 2 == 0]
 print(even_nos)
+
+# generator expression 
+h = (row[1] for row in matrix)
+print(next(h))
+print(next(h))
+print(next(h)) # after this is you call next() again it will give StopIteration error because the generator runs out of elements. 
 

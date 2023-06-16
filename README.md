@@ -15,3 +15,5 @@ regexes/ contains regex examples using the re module of standard library.
 The objective is to study 1. LP 2. PP 3. Fluent python
 The objective is to learn 4 hours everyday dedicatedly and be a competent operative.
 
+You better study because bad mood at work is bad for health.
+
