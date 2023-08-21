@@ -13,6 +13,9 @@ print(2 ** 5)
 # Strings are examples of sequence in python.
 # sequence = a positionally ordered collection of other objects. 
 # other examples of sequences are lists and tuples.
+r = b'abA12'
+print(r[0], r[1], r[2]) #byte string prints ASCII value of each character. I dont know the reason now. 
+
 
 S = 'Spam'
 print(len(S)) # 4
@@ -114,4 +117,55 @@ h = (row[1] for row in matrix)
 print(next(h))
 print(next(h))
 print(next(h)) # after this is you call next() again it will give StopIteration error because the generator runs out of elements. 
+
+
+#################################
+#################################
+# dictionaries
+D = {'food': 'samosa', 'quantity': 4, 'color': 'yellow'}
+D['country'] = 'India'
+print(D)
+print(sorted(D))
+bool_result = 'city' in D
+print(bool_result) # check key membership
+print(D.get('city', 0)) #.get() method is a nice way to fetch a key if it exists else fetch a default value
+
+###############################
+###############################
+# tuples
+T = (1, 5.67, [8,7], 'rty')
+# T[1] = 45 will give TypeError as item assignment is not supported by tuples because they are immutable.
+print(T + (55,44))
+
+##############################
+##############################
+# file objects
+f = open('file_created_in_python', 'w')
+f.write('my name is abhi.\n')
+f.write('this is good.\n')
+f.close() # writes the buffers to disk
+
+f = open('file_created_in_python', 'r')
+content = f.read()
+print(content)
+
+################################
+###############################
+# sets
+X = {'s', 'p', 'a', 'm'}
+Y = {'h', 'a', 'm'}
+print(X & Y)
+print(X | Y)
+print(X - Y)
+
+##################################
+#################################
+# 'type' object / type checking to break flexibility of python code
+w = [4,5,6]
+if type(w) == type([]):
+    print('yes')
+if type(w) == list:
+    print('yes')
+if isinstance(w, list):
+    print('yes')
 
